@@ -1,1 +1,34 @@
-<h1>Books</h1>
+<h2>User info</h2>
+<p><%= image_tag 'default-image.jpg' %></p>
+<tr>
+  <th>name</th>
+  <th><%= current_user.name %></th>
+</tr>
+<tr>
+  <th>introduction</th>
+  <th><%= current_user.introduction %></th>
+</tr>
+<p><%= link_to "プロフィールの編集", edit_user_path(current_user) %></p>
+<h2>New book</h2>
+<%= form_with model: @book, local:true do |f| %>
+  <label>Title</label>
+    <%= f.text_field :title %>
+  <label>Opinion</label>
+    <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+<h2>Books</h2>
+<tr>
+  <th>Title</th>
+  <th>Opinion</th>
+</tr>
+<% @books.each do |book| %>
+<div>
+  <p><%= image_tag book.user.get_profile_image(100, 100) %></p>
+  <p>
+    <%=  link_to "book.title", book_path(book.id) %>
+  </p>
+  <p><%= book.body %></p>
+</div>
+<% end %>
