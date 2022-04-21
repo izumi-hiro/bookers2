@@ -2,13 +2,13 @@
 <p><%= image_tag 'default-image.jpg' %></p>
 <tr>
   <th>name</th>
-  <th><%= current_user.name %></th>
+  <th><%= user.name %></th>
 </tr>
 <tr>
   <th>introduction</th>
-  <th><%= current_user.introduction %></th>
+  <th><%= user.introduction %></th>
 </tr>
-<p><%= link_to "プロフィールの編集", edit_user_path(current_user) %></p>
+<p><%= link_to "プロフィールの編集", edit_user_path(user) %></p>
 <h2>New book</h2>
 <%= form_with model: book, local:true do |f| %>
   <label>Title</label>
