@@ -25,7 +25,9 @@
 </tr>
 <% @books.each do |book| %>
 <div>
-  <p><%= image_tag book.user.get_profile_image(100, 100) %></p>
+  <%= link_to user_path(book.user_id) do %>
+    <%= image_tag book.user.get_profile_image(100, 100) %>
+  <% end %>
   <p>
     <%=  link_to "book.title", book_path(book.id) %>
   </p>
