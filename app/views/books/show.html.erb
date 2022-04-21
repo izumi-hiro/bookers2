@@ -10,9 +10,11 @@
       <p><%=  link_to @user.name, user_path(@book.user_id) %></p>
       <%=  link_to @book.title, book_path(@book.id) %>
       <%= @book.body %>
-      <%= link_to "Edit", edit_book_path %>
-      |
-      <%= link_to "Destroy", book_path(@book), method: :delete %>
+      <% if @book.user == current_user %>
+        <%= link_to "Edit", edit_book_path %>
+        |
+        <%= link_to "Destroy", book_path(@book), method: :delete %>
+      <% end %>
     </td>
   </tr>
 </tbody>
