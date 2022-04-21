@@ -1,22 +1,4 @@
-<h2>User info</h2>
-<p><%= image_tag 'default-image.jpg' %></p>
-<tr>
-  <th>name</th>
-  <th><%= current_user.name %></th>
-</tr>
-<tr>
-  <th>introduction</th>
-  <th><%= current_user.introduction %></th>
-</tr>
-<p><%= link_to "プロフィールの編集", edit_user_path(current_user) %></p>
-<h2>New book</h2>
-<%= form_with model: @book, local:true do |f| %>
-  <label>Title</label>
-    <%= f.text_field :title %>
-  <label>Opinion</label>
-    <%= f.text_area :body %>
-  <%= f.submit 'Create Book' %>
-<% end %>
+<%= render 'user_info', book: @book %>
 
 <h2>Books</h2>
 <tr>
