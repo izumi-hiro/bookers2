@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .navbar-light .navbar-toggler {
+   color: hsla(0, 0%, 100%, .5);
+   border-color: hsla(0, 0%, 100%, .1);
+ }
+ 
