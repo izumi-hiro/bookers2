@@ -17,11 +17,9 @@
   <th>introduction</th>
   <th><%= user.introduction %></th>
 </tr>
-<p>
-  <%= link_to edit_user_path(user), class: "btn btn-outline-secondary" do %>
-    <i class="fas fa-user-cog"></i>
-  <% end %>
-</p>
+<%= link_to edit_user_path(user), class: "btn btn-outline-secondary" do %>
+  <i class="fas fa-user-cog"></i>
+<% end %>
 <h2>New book</h2>
 <%= form_with model: book, local:true do |f| %>
   <label>Title</label>
